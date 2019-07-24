@@ -1,0 +1,8 @@
+*.pyc
+*setting*
+*.sqlite3
+*.db
+env/*
+*secret*
+*.DS_Store
+*.bak

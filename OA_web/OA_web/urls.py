@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import views
+import OA_web.views as views
 
 urlpatterns = [
-    path('/', views.index),
+    path('', views.index),
     path('admin/', admin.site.urls),
 ]
