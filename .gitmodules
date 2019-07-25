@@ -1,3 +1,3 @@
-[submodule "OA_web-settings"]
-	path = src/OA_web/config/
+[submodule "src/OA_web/config"]
+	path = src/OA_web/config
 	url = git@github.com:remiscarlet/OA_web-settings.git
