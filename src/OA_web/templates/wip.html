@@ -1,0 +1,94 @@
+<style>
+body {
+	font-family: 'Cinzel', serif;
+    text-align: center;
+    background: #FAF5ED;
+	position: relative;
+	padding: 20px;
+}
+
+
+h1 {
+	padding-bottom: 0;
+	margin-bottom: 0px;
+}
+hr {
+    border: 0;
+    height: 2px;
+    padding: 0;
+    margin: 0px auto;
+    margin-top: 4px;
+}
+
+hr.top {
+    background: linear-gradient(90deg, rgba(148,137,83,1) 0%, rgba(172,231,250,1) 100%);
+}
+hr.bot {
+    background: rgb(199, 194, 169);
+}
+
+@media only screen and (max-width: 959px) {
+	h1 {
+		text-align: left;
+		font-size: 59px;
+		line-height: 58px;
+		height: 50px;
+	}
+	h1.bot {
+		vertical-align: bottom;
+	}
+	hr.top {
+		width: 980px;
+	}
+	hr.bot {
+		width: 950px;
+	}
+
+	.flex {
+		display: flex;
+		align-items: left;
+		justify-content: left;
+		flex-direction: column;
+	}
+}
+@media only screen and (min-width: 960px) {
+	h1 {
+		font-size: 59px;
+		line-height: 58px;
+		height: 50px;
+	}
+	hr.top {
+		width: 980px;
+	}
+	hr.bot {
+		width: 950px;
+	}
+
+	.flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
+
+
+img {
+	margin-top: 40px;
+}
+
+</style>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {% load static %}
+	<div class="flex">
+		<h1>The Order of Axis<wbr> Association</h1>
+		<hr class="top">
+		<hr class="bot">
+		<img src="{% static 'img/shield/shield3_104x135.png' %}" alt="">
+		<h1 class="bot">Coming Soon!</h1>
+	</div>
+</body>
