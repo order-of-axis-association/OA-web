@@ -1,16 +1,16 @@
 <style>
 body {
-	font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', serif;
     background: #FAF5ED;
-	position: relative;
-	padding: 20px;
+    position: relative;
+    padding: 20px;
 }
 
 
 h1 {
     display: inline-block;
-	padding-bottom: 0;
-	margin-bottom: 0px;
+    padding-bottom: 0;
+    margin-bottom: 0px;
 }
 hr {
     border: 0;
@@ -35,28 +35,28 @@ div.inline {
 }
 
 @media only screen and (min-width: 960px) {
-	h1 {
-		font-size: 59px;
-		line-height: 58px;
-		height: 50px;
-	}
+    h1 {
+        font-size: 59px;
+        line-height: 58px;
+        height: 50px;
+    }
     hr {
         margin: 0px auto;
         margin-top: 4px;
     }
-	hr.top {
-		width: 980px;
-	}
-	hr.bot {
-		width: 950px;
-	}
+    hr.top {
+        width: 980px;
+    }
+    hr.bot {
+        width: 950px;
+    }
 
-	.flex {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	}
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
     div.br {
         display: inline;
         padding-left: 0px;
@@ -75,10 +75,10 @@ div.inline {
     }
 }
 @media only screen and (max-width: 959px) {
-	h1 {
-		font-size: 38px;
-		line-height: 38px;
-	}
+    h1 {
+        font-size: 38px;
+        line-height: 38px;
+    }
     h1.title {
         height: 35px;
     }
@@ -86,19 +86,19 @@ div.inline {
         margin: 0px auto;
         margin-top: 4px;
     }
-	hr.top {
-		width: 550px;
-	}
-	hr.bot {
-		width: 520px;
-	}
+    hr.top {
+        width: 550px;
+    }
+    hr.bot {
+        width: 520px;
+    }
 
-	.flex {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	}
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
     div.br {
         display: inline;
         padding-left: 0px;
@@ -118,36 +118,36 @@ div.inline {
 }
 
 @media only screen and (max-width: 600px) {
-	h1 {
-		text-align: left;
-		font-size: 47px;
-	    line-height: 50px;
-	}
+    h1 {
+        text-align: left;
+        font-size: 47px;
+        line-height: 50px;
+    }
     h1.title {
         height: 95px;
     }
 
-	h1.bot {
+    h1.bot {
         position: absolute;
         bottom: 50px;
-	}
+    }
     hr {
         margin-left: 0;
     }
-	hr.top {
+    hr.top {
         position: relative;
         left: -15px;
-		width: 535px;
-	}
-	hr.bot {
-		width: 535px;
+        width: 535px;
+    }
+    hr.bot {
+        width: 535px;
     }
 
-	.flex {
-		display: flex;
-		justify-content: left;
-		flex-direction: column;
-	}
+    .flex {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
 
     div.logo_flex {
         display: flex;
@@ -181,13 +181,13 @@ div.inline {
         height: 80px;
     }
 
-	hr.top {
+    hr.top {
         position: relative;
         left: -10px;
-		width: 311px;
-	}
-	hr.bot {
-		width: 311px;
+        width: 311px;
+    }
+    hr.bot {
+        width: 311px;
     }
 
     div.logo_mobile img {
@@ -214,7 +214,7 @@ div.inline {
 
 <body>
     {% load static %}
-	<div class="flex">
+    <div class="flex">
         <div class="logo_flex">
             <div class="inline">
                 <h1 class="title">Order of Axis<div class="br"> Association</div></h1>
@@ -223,11 +223,11 @@ div.inline {
                 <img src="{% static 'img/shield/Shield_73x97.png' %}" alt="">
             </div>
         </div>
-		<hr class="top">
-		<hr class="bot">
+        <hr class="top">
+        <hr class="bot">
         <div class="logo_desktop">
             <img src="{% static 'img/shield/Shield_104x135.png' %}" alt="">
         </div>
-		<h1 class="bot">Coming Soon!</h1>
+        <h1 class="bot">Coming Soon!</h1>
     </div>
 </body>
