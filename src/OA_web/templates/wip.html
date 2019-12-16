@@ -8,6 +8,7 @@ body {
 
 
 h1 {
+    display: inline-block;
 	padding-bottom: 0;
 	margin-bottom: 0px;
 }
@@ -29,8 +30,11 @@ hr.bot {
 div.br {
     padding-left: 13px;
 }
+div.inline {
+    display: inline;
+}
 
-@media only screen and (min-width: 959px) {
+@media only screen and (min-width: 960px) {
 	h1 {
 		font-size: 59px;
 		line-height: 58px;
@@ -70,13 +74,59 @@ div.br {
         margin-top: 40px;
     }
 }
+@media only screen and (max-width: 959px) {
+	h1 {
+		font-size: 38px;
+		line-height: 38px;
+	}
+    h1.title {
+        height: 35px;
+    }
+    hr {
+        margin: 0px auto;
+        margin-top: 4px;
+    }
+	hr.top {
+		width: 550px;
+	}
+	hr.bot {
+		width: 520px;
+	}
 
-@media only screen and (max-width: 960px) {
+	.flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+    div.br {
+        display: inline;
+        padding-left: 0px;
+    }
+
+    div.logo_mobile {
+        display: none;
+    }
+
+    div.logo_desktop {
+
+    }
+
+    div.logo_desktop img {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
 	h1 {
 		text-align: left;
 		font-size: 47px;
-		line-height: 50px;
+	    line-height: 50px;
 	}
+    h1.title {
+        height: 95px;
+    }
+
 	h1.bot {
         position: absolute;
         bottom: 50px;
@@ -101,7 +151,7 @@ div.br {
 
     div.logo_flex {
         display: flex;
-        justify-content: left;
+        justify-content: flex-start;
         flex-direction: row;
     }
 
@@ -127,6 +177,9 @@ div.br {
         font-size: 27px;
         line-height: 27px;
     }
+    h1.title {
+        height: 80px;
+    }
 
 	hr.top {
         position: relative;
@@ -139,7 +192,7 @@ div.br {
 
     div.logo_mobile img {
         position: relative;
-        bottom: 0px;
+        bottom: 15px;
     }
 
 }
@@ -163,8 +216,8 @@ div.br {
     {% load static %}
 	<div class="flex">
         <div class="logo_flex">
-            <div>
-                <h1>Order of Axis<div class="br"> Association</div></h1>
+            <div class="inline">
+                <h1 class="title">Order of Axis<div class="br"> Association</div></h1>
             </div>
             <div class="logo_mobile">
                 <img src="{% static 'img/shield/Shield_73x97.png' %}" alt="">
