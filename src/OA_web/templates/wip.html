@@ -1,7 +1,6 @@
 <style>
 body {
 	font-family: 'Cinzel', serif;
-    text-align: center;
     background: #FAF5ED;
 	position: relative;
 	padding: 20px;
@@ -16,8 +15,8 @@ hr {
     border: 0;
     height: 2px;
     padding: 0;
-    margin: 0px auto;
-    margin-top: 4px;
+    margin: 0;
+    margin-top: 5px;
 }
 
 hr.top {
@@ -27,36 +26,20 @@ hr.bot {
     background: rgb(199, 194, 169);
 }
 
-@media only screen and (max-width: 959px) {
-	h1 {
-		text-align: left;
-		font-size: 59px;
-		line-height: 58px;
-		height: 50px;
-	}
-	h1.bot {
-		vertical-align: bottom;
-	}
-	hr.top {
-		width: 980px;
-	}
-	hr.bot {
-		width: 950px;
-	}
-
-	.flex {
-		display: flex;
-		align-items: left;
-		justify-content: left;
-		flex-direction: column;
-	}
+div.br {
+    padding-left: 13px;
 }
-@media only screen and (min-width: 960px) {
+
+@media only screen and (min-width: 959px) {
 	h1 {
 		font-size: 59px;
 		line-height: 58px;
 		height: 50px;
 	}
+    hr {
+        margin: 0px auto;
+        margin-top: 4px;
+    }
 	hr.top {
 		width: 980px;
 	}
@@ -70,25 +53,128 @@ hr.bot {
 		justify-content: center;
 		flex-direction: column;
 	}
+    div.br {
+        display: inline;
+        padding-left: 0px;
+    }
+
+    div.logo_mobile {
+        display: none;
+    }
+
+    div.logo_desktop {
+
+    }
+
+    div.logo_desktop img {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+	h1 {
+		text-align: left;
+		font-size: 47px;
+		line-height: 50px;
+	}
+	h1.bot {
+        position: absolute;
+        bottom: 50px;
+	}
+    hr {
+        margin-left: 0;
+    }
+	hr.top {
+        position: relative;
+        left: -15px;
+		width: 535px;
+	}
+	hr.bot {
+		width: 535px;
+    }
+
+	.flex {
+		display: flex;
+		justify-content: left;
+		flex-direction: column;
+	}
+
+    div.logo_flex {
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+    }
+
+    div.logo_mobile {
+        display: inline;
+        margin-left: 15px;
+    }
+
+    div.logo_mobile img {
+        position: relative;
+        bottom: -59px;
+    }
+
+    div.logo_desktop {
+        display: none;
+    }
 }
 
 
-img {
-	margin-top: 40px;
+@media only screen and (max-width: 485px) {
+    h1 {
+        text-align: left;
+        font-size: 27px;
+        line-height: 27px;
+    }
+
+	hr.top {
+        position: relative;
+        left: -10px;
+		width: 311px;
+	}
+	hr.bot {
+		width: 311px;
+    }
+
+    div.logo_mobile img {
+        position: relative;
+        bottom: 0px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    h1 {
+        text-align: left;
+        font-size: 24px;
+        line-height: 24px;
+    }
+
 }
 
 </style>
 <head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 
 <body>
     {% load static %}
 	<div class="flex">
-		<h1>The Order of Axis<wbr> Association</h1>
+        <div class="logo_flex">
+            <div>
+                <h1>Order of Axis<div class="br"> Association</div></h1>
+            </div>
+            <div class="logo_mobile">
+                <img src="{% static 'img/shield/Shield_73x97.png' %}" alt="">
+            </div>
+        </div>
 		<hr class="top">
 		<hr class="bot">
-		<img src="{% static 'img/shield/shield3_104x135.png' %}" alt="">
+        <div class="logo_desktop">
+            <img src="{% static 'img/shield/Shield_104x135.png' %}" alt="">
+        </div>
 		<h1 class="bot">Coming Soon!</h1>
-	</div>
+    </div>
 </body>
