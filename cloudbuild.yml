@@ -1,9 +1,52 @@
 steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [
+    'kms',
+    'decrypt',
+    '--ciphertext-file=oa_web_secrets_deploy_key.enc',
+    '--plaintext-file=/root/.ssh/id_rsa',
+    '--location=us-central1',
+    '--keyring=order-of-axis-kms-ring',
+    '--key=oa-web_secret_pem'
+  ]
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    chmod 600 /root/.ssh/id_rsa
+    cat <<EOF >/root/.ssh/config
+    Hostname github.com
+    IdentityFile /root/.ssh/id_rsa
+    EOF
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    ssh-keyscan github.com >> /root/.ssh/known_hosts
+    git clone --recurse-submodules git@github.com:order-of-axis-association/OA_web.git
+    cp /root/.ssh/id_rsa OA_web/src/OA_web/config/
+    cp /root/.ssh/known_hosts OA_web/src/OA_web/config/
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'build',
+    '--build-arg',
+    'REPO_REVISION=$SHORT_SHA',
     '-t',
     'gcr.io/$PROJECT_ID/oa-web:latest',
     '.'
   ]
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
 images: ['gcr.io/$PROJECT_ID/oa-web:latest']

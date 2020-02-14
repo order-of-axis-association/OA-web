@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 manage.py runserver 0.0.0.0:8666
+python3 manage.py runserver 0.0.0.0:80

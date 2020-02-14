@@ -3,10 +3,6 @@ SHARED_PROJECT_ID=oa-shared-247623
 
 ACTIVE_PROJECT_ID=$(shell gcloud info | grep -oP "(?<=Project: \[).*(?=\])")
 
-BINARY_PATH=bin/
-BINARY_NAME=aqua
-BINARY_FULL_PATH=$(BINARY_PATH)$(BINARY_NAME)
-
 all: gcloudbuild
 gcloudbuild:
 ifeq ($(ACTIVE_PROJECT_ID), $(SHARED_PROJECT_ID))
