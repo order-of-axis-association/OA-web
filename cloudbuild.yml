@@ -31,9 +31,9 @@ steps:
   - '-c'
   - |
     ssh-keyscan github.com >> /root/.ssh/known_hosts
-    git clone --recurse-submodules git@github.com:order-of-axis-association/OA_web.git
-    cp /root/.ssh/id_rsa OA_web/src/OA_web/config/
-    cp /root/.ssh/known_hosts OA_web/src/OA_web/config/
+    git clone --recurse-submodules --single-branch --branch $BRANCH_NAME git@github.com:order-of-axis-association/OA_web.git
+    cp /root/.ssh/id_rsa src/OA_web/config/
+    cp /root/.ssh/known_hosts src/OA_web/config/
   volumes:
   - name: 'ssh'
     path: /root/.ssh
@@ -43,10 +43,10 @@ steps:
     '--build-arg',
     'REPO_REVISION=$SHORT_SHA',
     '-t',
-    'gcr.io/$PROJECT_ID/oa-web:latest',
+    'gcr.io/$PROJECT_ID/oa-web:$BRANCH_NAME',
     '.'
   ]
   volumes:
   - name: 'ssh'
     path: /root/.ssh
-images: ['gcr.io/$PROJECT_ID/oa-web:latest']
+images: ['gcr.io/$PROJECT_ID/oa-web:$BRANCH_NAME']
