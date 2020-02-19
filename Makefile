@@ -2,7 +2,7 @@ CLOUDBUILD_CONFIG=cloudbuild.yml
 SHARED_PROJECT_ID=oa-shared-247623
 
 ACTIVE_PROJECT_ID=$(shell gcloud info | grep -oP "(?<=Project: \[).*(?=\])")
-BRANCH_NAME=$(shell git branch | cut -d ' ' -f2)
+BRANCH_NAME=$(shell git branch | cut -d ' ' -f2 | tr -d '[:space:]')
 
 all: gcloudbuild
 gcloudbuild:
