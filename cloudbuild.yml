@@ -34,6 +34,9 @@ steps:
     git clone --recurse-submodules --single-branch --branch $BRANCH_NAME git@github.com:order-of-axis-association/OA_web.git
     cp /root/.ssh/id_rsa src/OA_web/config/
     cp /root/.ssh/known_hosts src/OA_web/config/
+    ls -al src/OA_web/config
+    ls -al
+    pwd
   volumes:
   - name: 'ssh'
     path: /root/.ssh
